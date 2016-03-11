@@ -37,7 +37,9 @@
     testactivities[1]<-factor(as.character(testactivities[[1]]), levels=activityLevels, labels=activityLabels)
     xtest[,"activity"]<-testactivities[[1]]
    
-    #read in training data using colNames as col.names
+    #read in subjects and add to test table
+    testsubjects<-fread("UCI HAR Dataset/test/subject_test.txt", data.table=FALSE)
+    xtest[,"subject"]<-testsubjects[[1]]
     
     ###############
     #TRAINING DATA#
@@ -53,6 +55,10 @@
     trainactivities[1]<-factor(as.character(trainactivities[[1]]), levels=activityLevels, labels=activityLabels)
     xtrain[,"activity"]<-trainactivities[[1]]
     
+    #read in subjects and add to training table
+    trainsubjects<-fread("UCI HAR Dataset/train/subject_train.txt", data.table=FALSE)
+    xtrain[,"subject"]<-trainsubjects[[1]]
+    
     ##############################
     #MERGE TEST AND TRAINING DATA#
     ##############################
@@ -65,5 +71,5 @@
     
     #remove none mean and std columns
     library(dplyr)
-    filteredtraintest <- traintest %>% select(matches("mean|std") )
+    traintest <- traintest %>% select(matches("mean|std|subject|activity") )
     
