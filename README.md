@@ -12,14 +12,14 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 run_analysis(download=TRUE,writetable=true)  
   
 ##Arguments:  
-download&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Downloads the data files needed for doing analysis from the uci website, only needed first time  
+download&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Downloads the data files needed for doing analysis from the uci website, only needed first time  
 writetable&nbsp;&nbsp;&nbsp;&nbsp;Writes the output to a textfile with the name averageByActivityAndSubject.txt  
   
   
 ##Examples:   
 How to run run_analysis:  
 x<-run_analysis(download=TRUE,writetable=true)  
-
-To show only activity , subject and one measurement column:
+  
+To show only activity , subject and one measurement column:  
 View(x[,c(1:3)])  
   
