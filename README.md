@@ -12,8 +12,8 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 run_analysis(download=TRUE,writetable=true)  
   
 ##Arguments:  
-download&#09;Downloads the data files needed for doing analysis from the uci website, only needed first time
-writetable&#09;Writes the output to a textfile with the name averageByActivityAndSubject.txt
+download&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Downloads the data files needed for doing analysis from the uci website, only needed first time  
+writetable&nbsp;&nbsp;&nbsp;&nbsp;Writes the output to a textfile with the name averageByActivityAndSubject.txt  
   
   
 ##Examples:   
