@@ -1,15 +1,6 @@
 #EXAMPLE 
 # e.g
-# x<-run_analysis()
-#head(x[,c(1:3)])
-
-# activity subject tbodyaccmeanx
-# (fctr)   (int)         (dbl)
-# 1  walking       1     0.2773308
-# 2  walking       2     0.2764266
-
-
-run_analysis = function(download=FALSE)
+run_analysis = function(download=FALSE, writetable=FALSE)
 {
     #################
     #LOAD LIBRARIES #
@@ -90,4 +81,10 @@ run_analysis = function(download=FALSE)
     
     #average by activity and subject
     traintestGroup <- group_by(traintest,activity, subject) %>% summarise_each(funs(mean))
+    
+    #write output to text file 
+    if(writetable){
+        write.table(traintestGroup,file="averageByActivityAndSubject.txt",row.name=FALSE)
+    }
+    traintestGroup
 }
