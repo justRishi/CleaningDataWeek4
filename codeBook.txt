@@ -56,4 +56,6 @@ These are the included columns:
 The set of variables that were estimated from these signals are: 
 mean: Mean value
 std: Standard deviation
+activity, one of the following values: walking walkingupstairs  walkingdownstairs sitting standing laying
+subject: a number for each subject from who the measuraments originated
 
