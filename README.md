@@ -3,6 +3,8 @@
 ##Description:  
 Running the function run_analysis results in averages of all the means and std of all the measurements by activity and subject  (grouped by activity and subject).  
   
+See codebook.txt for all the modifications done on the original datasets and the resulting columns. 
+    
 Based on the data sets of uci:  
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones  
   
