@@ -1,5 +1,4 @@
-# CleaningDataWeek4
-Cleaning Data Week 4 Assignment
+#Cleaning Data Week 4 Assignment
 -------------------------------  
   
 ##Description:  
