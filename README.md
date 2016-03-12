@@ -1,5 +1,4 @@
-#Cleaning Data Week 4 Assignment
--------------------------------  
+#Cleaning Data Week 4 Assignment, Run Analysis  
   
 ##Description:  
 Running the function run_analysis results in averages of all the means and std of all the measurements by activity and subject  (grouped by activity and subject).  
