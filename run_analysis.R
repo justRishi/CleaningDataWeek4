@@ -1,5 +1,4 @@
-#EXAMPLE 
-# e.g
+
 run_analysis = function(download=FALSE, writetable=FALSE)
 {
     #################
