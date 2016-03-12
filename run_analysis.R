@@ -1,10 +1,27 @@
+#EXAMPLE 
+# e.g
+# x<-run_analysis()
+#head(x[,c(1:3)])
+
+# activity subject tbodyaccmeanx
+# (fctr)   (int)         (dbl)
+# 1  walking       1     0.2773308
+# 2  walking       2     0.2764266
+
+
+run_analysis = function(download=FALSE)
+{
+    #################
+    #LOAD LIBRARIES #
+    #################
+    
+    library(dplyr)
+    library(data.table)
 
     ###############
     #RETRIEVE DATA#
     ###############
 
-    download<-FALSE
-    
     if(download){
         download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip","uci.zip")
         unzip("uci.zip")
@@ -62,14 +79,15 @@
     ##############################
     #MERGE TEST AND TRAINING DATA#
     ##############################
-    
     traintest<-merge(xtrain,xtest, all = TRUE)
     
-    ##########
-    #CLEAN UP#
-    ##########
+    ####################
+    #CLEAN UP & AVERAGE#
+    ####################
     
-    #remove none mean and std columns
-    library(dplyr)
+    #remove none mean and none std columns (and keep subject and activity of course)
     traintest <- traintest %>% select(matches("mean|std|subject|activity") )
     
+    #average by activity and subject
+    traintestGroup <- group_by(traintest,activity, subject) %>% summarise_each(funs(mean))
+}
